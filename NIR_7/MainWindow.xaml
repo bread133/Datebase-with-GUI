@@ -1,0 +1,34 @@
+﻿<Window x:Class="NIR_7.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="800"
+        xmlns:control ="clr-namespace:NIR_7">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="331*"/>
+            <ColumnDefinition Width="469*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <Button x:Name="CreateData" Content=" Генерация данных для базы данных песочницы " Height="30" Margin="0,10,0,0" VerticalAlignment="Top" Click="CreateDataForTables_Click" Width="274" HorizontalAlignment="Center" />
+            <Button x:Name="DeleteData" Content=" Удаление данных базы данных песочницы " Height="30" VerticalAlignment="Top" Margin="0,10,0,0" Click="DeleteDataForTables_Click" Width="246" HorizontalAlignment="Center" />
+            <Button x:Name="SelectButton" Content=" Выполнить запрос " Height="30" VerticalAlignment="Top" Margin="0,10,0,0" HorizontalAlignment="Center" Click="SelectButton_Click" />
+            <Button x:Name="DumpButton" Content=" Дамп и бекап песочницы " Height="30" VerticalAlignment="Top" Margin="0,10,0,0" HorizontalAlignment="Center" Click="DumpButton_Click" />
+            <Button x:Name="GeneratePlotButton" Content=" Время генерации данных / количество данных " Height="30" VerticalAlignment="Top" Margin="0,10,0,0" HorizontalAlignment="Center" Click="GeneratePlotButton_Click" />
+            <Button x:Name="InsertPlotButton" Content=" Время INSERT-а данных / количество данных " Height="30" VerticalAlignment="Top" Margin="0,10,0,0" HorizontalAlignment="Center" Click="InsertPlotButton_Click" />
+            <Button x:Name="DeletePlotButton" Content=" Время удаления данных / количество данных " Height="30" VerticalAlignment="Top" Margin="0,10,0,0" HorizontalAlignment="Center" Click="DeletePlotButton_Click" />
+            <Button x:Name="SelectPlotButton" Content=" Время SELECT-а данных / количество данных " Height="30" VerticalAlignment="Top" Margin="0,10,0,0" HorizontalAlignment="Center" Click="SelectPlotButton_Click" />
+        </StackPanel>
+
+        <control:CreateDataForTables x:Name="createData" Grid.Column="1" Margin="62,17,174,17" Visibility="Hidden" />
+        <control:SelectControl x:Name="selectControl" Grid.Column="1" Margin="0,0,10,-55" Visibility="Hidden" />
+        <control:DeleteControl x:Name="deleteControl" Grid.Column="1" Margin="50,10,0,0" Visibility="Hidden" />
+        <control:InsertPlot x:Name="timeGeneration" Grid.Column="1" Visibility="Hidden" />
+        <control:ConfigureDump x:Name="configureDump" Grid.Column="1" Visibility="Hidden" />
+        <control:InsertPlotView x:Name="insertPlot" Grid.Column="1" Visibility="Hidden" />
+        <control:DeletePlotView x:Name="deletePlot" Grid.Column="1" Visibility="Hidden" />
+        <control:SelectPlotView x:Name="selectPlot" Grid.Column="1" Visibility="Hidden"/>
+    </Grid>
+</Window>
