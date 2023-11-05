@@ -13,3 +13,7 @@ All table create authomatically with start of program.
 1. Install MySQL Server,
 2. Create your database,
 3. Configure fileSettings for your database.
+
+# Bugs and quick'n'dirty
+1. dump of DB not safe, but other methods doesn't work;
+2. exploration of SQL operations have bug - you need to INSERT some data before explore dependence of the running.
